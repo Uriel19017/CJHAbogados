@@ -1,0 +1,799 @@
+:root{
+    --oscuro:#07070A;
+    --azulOscuro:#883131;
+    --azulClaro:#831212;
+    --blanco:#FEFCFB;
+    --titulos:'Arial';
+    --parrafos:'Arial', Arial;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* scroll-behavior: smooth; */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor del menú */
+.navbar {
+    position: relative; /* Asegura que el fondo solo afecte al navbar */
+    padding: 90px 2px; /* Ajusta el padding para empujar el contenido hacia abajo */
+    background-image: url('../img/Banner\ web_CJH_4256x2832.jpg'); /* Coloca la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el área sin distorsionarse */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: auto ; /* El menú ajusta su altura según su contenido */
+    width: 100%; /* Asegura que el menú ocupe todo el ancho de la pantalla */
+    z-index: 1; /* Asegura que el contenido del navbar esté encima de la imagen */
+}
+
+/* Ajusta la posición del contenido dentro del navbar si es necesario */
+.navbar__content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima de la imagen de fondo */
+    /* Otros estilos para el contenido del navbar */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Arial;
+    /* No le aplicamos imagen de fondo al cuerpo para que no afecte la página entera */
+}
+
+
+/* Menú de navegación */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin-top: 50px;
+    align-items: center; /* Alinea verticalmente los elementos del menú */
+}
+
+.nav-menu li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: black; /* Cambia de color al pasar el cursor */
+}
+
+/* Estilos generales para el menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    padding: 10px;
+    z-index: 1000; /* Asegúrate de que este valor sea mayor que el de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para mejor visibilidad */
+}
+
+/* Estilos para los elementos de la lista del menú desplegable */
+.dropdown-content li {
+    margin: 5px 0;
+}
+
+/* Estilos para los enlaces dentro del menú desplegable */
+.dropdown-content li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* Mostrar el menú desplegable al hacer hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Capa adicional para asegurar que el menú esté por encima de todo */
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Ajusta la posición del menú desplegable para dispositivos móviles */
+    .dropdown-content {
+        position: static; /* Cambia la posición a estática para evitar desbordamientos */
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    }
+
+    /* Alinea el contenido a la izquierda en dispositivos móviles */
+    .dropdown-content li a {
+        text-align: left;
+        padding: 10px 15px;
+        display: block;
+    }
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Alinea los íconos a la izquierda */
+    gap: 15px;
+    position: absolute; /* Posiciona los íconos fuera del flujo normal */
+    top: 10px; /* Ajusta la posición desde la parte superior */
+    left: 10px; /* Ajusta la posición desde la izquierda */
+    z-index: 2; /* Asegura que los íconos estén encima del contenido */
+}
+
+/* Estilo para los íconos de redes sociales */
+.social-icons a {
+    color: white;
+    font-size: 40px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: black;
+}
+
+/* Estilo para la hamburguesa */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Ajusta la posición de la hamburguesa */
+    z-index: 2; /* Asegura que la hamburguesa esté encima del contenido */
+}
+
+/* Oculta el menú de navegación y los íconos de redes sociales en pantallas pequeñas */
+@media (max-width: 768px) {
+    .social-icons {
+        display: none; /* Oculta los íconos de redes sociales en pantallas pequeñas */
+    }
+
+    .hamburger {
+        display: block; /* Muestra la hamburguesa en pantallas pequeñas */
+    }
+
+    .nav-menu {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+        flex-direction: column; /* Cambia la dirección de los elementos del menú */
+        align-items: center; /* Centra los elementos del menú */
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo para el menú desplegable */
+        position: absolute;
+        top: 60px; /* Ajusta la posición del menú desplegable */
+        left: 0;
+        z-index: 1; /* Asegura que el menú esté encima del contenido */
+    }
+
+    .nav-menu.show {
+        display: flex; /* Muestra el menú cuando la hamburguesa está activada */
+    }
+
+    .navbar {
+        background-size: cover; /* Asegura que la imagen de fondo cubra toda el área en pantallas pequeñas */
+        background-attachment: scroll; /* Permite que la imagen se desplace con el contenido */
+        padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas si es necesario */
+    }
+}
+/* Ventajas */
+@media (min-width: 768px) {
+    .contenido-ventajas {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3rem;
+    }
+}
+
+.ventajas {
+    padding: 2.5rem;
+    background-color: rgb(38, 37, 37); /* Fondo oscuro */
+    font-family: Arial, sans-serif; /* Fuente general */
+}
+
+.ventaja {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Fuente específica */
+    transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
+}
+
+.ventaja i {
+    font-size: 3rem; /* Tamaño de los íconos */
+    color: white; /* Color destacado (puedes cambiarlo según diseño) */
+    margin-bottom: 1rem; /* Espacio debajo del ícono */
+}
+
+.ventaja h3 {
+    font-size: 2.5rem; /* Tamaño de texto */
+    margin-top: 1rem; /* Espacio arriba del título */
+    color: #ffffff; /* Color del texto */
+}
+
+.ventaja p {
+    text-align: justify;
+    font-size: 2rem; /* Tamaño del párrafo */
+    color: #cfcfcf; /* Color de texto adicional */
+}
+
+.ventaja:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+
+/* Sección "nosotros" con imagen de fondo que ocupa el 95% de su espacio y centrada */
+.nosotros {
+    background-image: url('../img/salagris.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:85vw; /* Cambiado a 95% del ancho de la pantalla */
+    height: 85vh; /* Cambiado a 95% del alto de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centra horizontalmente la sección */
+    position: relative;
+    filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+/* Estilo para el contenido de la sección */
+.contenido-nosotros {
+   background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+   filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+    padding: 40px;
+    max-width: 100%; /* Ajusta el ancho del contenido */
+   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar relieve */
+}
+
+/* Estilo del texto */
+.texto-nosotros {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    align-items: justify;
+    font-size: 2.3rem; /* Tamaño de texto legible para pantallas grandes */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nosotros {
+        width: 100vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        height: 100vh; /* Ocupa el 100% del alto en pantallas pequeñas */
+    }
+
+    .contenido-nosotros {
+        padding: 20px;
+        max-width: 90%; /* Ajusta el ancho del contenido en pantallas pequeñas */
+    }
+
+    .texto-nosotros {
+        font-size: 1.2rem; /* Tamaño del texto para pantallas pequeñas */
+        text-align: center;
+    }
+}
+
+
+/*Seccion servicios*/
+.servicios {
+    padding-top: 5rem;
+}
+
+.servicios h2{
+    font-size: 15rem;
+    text-align: center;
+    color: var(--azulClaro);
+}
+
+@media(min-width: 768px) {
+    .contenido-servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 4rem;
+        
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.servicio i{
+    background-color: var(--azulClaro);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    font-size: 3rem;
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    transition: all .3s ease-in-out;
+}
+
+.servicio h3{
+    font-size: 2.2rem;
+    color: var(--azulOscuro);
+}
+.servicio p{
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+@media(min-width: 768px) {
+    .servicio p{
+        text-align: left;
+    }
+}
+
+@media(min-width: 768px) {
+    .servicio:hover{
+        cursor: pointer;
+    }
+
+    .servicio:hover .fas {
+        background-color: var(--blanco);
+        color: var(--azulClaro);
+    }
+}
+
+
+/* Estilo general del footer con imagen de fondo */
+.footer {
+    background-image: url('../img/soumaya.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    padding: 40px 20px;
+    color: #fff;
+    position: relative; /* Asegura que otros elementos no interfieran */
+    z-index: 1;
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para que el texto sea más legible */
+    z-index: -1;
+}
+
+/* Estilo del container */
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Otros estilos no requieren cambio */
+
+
+/* Estilo del logo */
+.footer__logo {
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.footer__logo-img {
+    width: 250px;
+    cursor: pointer;
+}
+
+/* Estilo del eslogan */
+.footer__slogan {
+    margin-top: 10px;
+    font-family: 'Arial', serif;
+    font-size: 2.2rem;
+    color: #ccc;
+    text-align: left;
+}
+
+/* Estilo de la lista de servicios */
+.footer__services {
+    flex: 2;
+    text-align: center;
+}
+
+.footer__title {
+    font-family: 'Arial', serif;
+    font-size: 1.8rem; /* Aumenté el tamaño del título */
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+}
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__list li {
+    margin-bottom: 10px;
+}
+
+.footer__list a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem; /* Aumenté el tamaño del texto en los enlaces */
+}
+
+.footer__list a:hover {
+    color: #fff;
+}
+
+/* Estilo de las redes sociales */
+.footer__social {
+    flex: 1;
+    text-align: right;
+}
+
+.footer__social-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer__social-icon {
+    margin-left: 15px;
+    font-size: 40px; /* Aumenté el tamaño de los íconos */
+    color: #fff;
+    transition: color 0.3s;
+}
+.footer__social-icon:hover {
+    color: #ccc;
+}
+/* Estilo para la parte inferior (Términos y Aviso de Privacidad) */
+.footer__legal {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer__legal a {
+    color: #ccc;
+    font-size: 1.25rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer__legal a:hover {
+    color: #fff;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__logo, .footer__services, .footer__social {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer__social-icons {
+        justify-content: center;
+    }
+
+    .footer__title {
+        font-size: 1.6rem; /* Ajuste de tamaño para pantallas pequeñas */
+    }
+
+    .footer__list a {
+        font-size: 1.1rem; /* Ajuste de tamaño de texto en servicios para pantallas pequeñas */
+    }
+
+    .footer__social-icon {
+        font-size: 26px; /* Ajuste de tamaño de los íconos en pantallas pequeñas */
+    }
+}
+
+/* Estilo general para la sección de contacto en el footer */
+.footer__contact {
+    font-family: 'Arial', sans-serif; /* Define la fuente */
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    color: white; /* Define el color del texto */
+    margin-top: 30px; /* Espaciado superior */
+    text-align: right; /* Alineación del texto */
+}
+/* Aumentar el espaciado entre los elementos de contacto */
+.footer__contact-item {
+    margin-bottom: 15px; /* Añade un margen inferior a cada elemento de contacto */
+}
+
+/* Ajustes de tamaño para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer__contact {
+        font-size: 1rem; /* Reduce el tamaño del texto para pantallas pequeñas */
+        text-align: center; /* Centra el texto en dispositivos móviles */
+        margin-top: 20px; /* Ajusta el espaciado superior */
+    }
+
+    .footer__contact-item {
+        margin-bottom: 10px; /* Espaciado más pequeño en pantallas móviles */
+    }
+}
+
+
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-out;
+    background-image: url('../assets/img/banner-5.jpg');
+    animation: banner 15s infinite linear;
+}
+
+/* Banner content */
+.banner-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+/* Banner text */
+.banner-text {
+    text-align: center;
+    z-index: 10; /* Ensures text is above the background */
+}
+
+.slogan {
+    font-size: 2.9rem; /* Adjust size as needed */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #FFF;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Keyframes for banner animation */
+@keyframes banner {
+    0% { background-image: url('../img/cdmxn.jpg'); }
+    25% { background-image: url('../img/cdmxn.jpg'); }
+    26% { background-image: url('../img/rreforman.jpg'); }
+    50% { background-image: url('../img/rreforman.jpg'); }
+    51% { background-image: url('../img/mayorgris.jpg'); }
+    75% { background-image: url('../img/mayorgris.jpg'); }
+    76% { background-image: url('../img/brutalgris.jpg'); }
+    100% { background-image: url('../img/brutalgris.jpg'); }
+}
+
+/* Keyframes for text animation */
+@keyframes text-fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    25% { opacity: 1; }
+    35% { opacity: 0; }
+}
+
+/* Applying text animations */
+.slogan[data-slogan="1"] {
+    animation: text-fade 15s infinite;
+    animation-delay: 0s;
+}
+
+.slogan[data-slogan="2"] {
+    animation: text-fade 15s infinite;
+    animation-delay: 3.75s; /* Adjust to match the image change */
+}
+
+.slogan[data-slogan="3"] {
+    animation: text-fade 15s infinite;
+    animation-delay: 7.5s; /* Adjust to match the image change */
+}
+
+.slogan[data-slogan="4"] {
+    animation: text-fade 15s infinite;
+    animation-delay: 11.25s; /* Adjust to match the image change */
+}
+
+.mapa-y-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+@media(min-width: 768px) {
+    .mapa-y-texto {
+        flex-direction: row; /* Coloca el texto y el mapa lado a lado en pantallas grandes */
+        justify-content: space-between;
+    }
+}
+
+.texto {
+    max-width: 40%; /* Ajusta el ancho del texto */
+    font-size: 1.6rem;
+}
+
+.texto p{
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+.mapa-container {
+    max-width: 100%; /* Ajusta el ancho del mapa */
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 450px; /* Ajusta la altura en pantallas pequeñas */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media(min-width: 768px) {
+    .mapa-container iframe {
+        height: 450px; /* Ajusta la altura en pantallas grandes */
+    }
+}
+.redes-sociales {
+    position: relative;
+    width: 67%;
+    height: 120px; /* Ajusta la altura según sea necesario */
+    background: url('../img/red.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  .logo-contenedor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Evita que el logo interfiera con los iconos sociales */
+  }
+  
+  .logo-enlace {
+    display: block;
+  }
+  
+  .logo-imagen {
+    display: none; /* Esconde la imagen del logo, si sólo se desea el fondo de la imagen */
+  }
+  
+  .iconos-sociales {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+  }
+  
+  .iconos-sociales a {
+    color: black; /* Color negro para los iconos */
+    font-size: 55px; /* Tamaño de los iconos, ajusta según sea necesario */
+    text-decoration: none;
+  }
+  
+  .iconos-sociales a:hover {
+    color: #555; /* Color al pasar el cursor, ajusta según sea necesario */
+  }
+  
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Inicialmente oculto */
+}
+
+.submenu li {
+    margin-top: 10px;
+}
+
+.submenu a {
+    color: var(--colorPrincipal);
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    text-decoration: underline;
+}
+
+.servicios-container.active .submenu {
+    display: block;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .logo-contenedor {
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 10px; /* Añade espacio entre el logo y las redes sociales */
+    }
+    
+    .redes-sociales {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .iconos-sociales {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .hamburguesa-menu {
+        display: block;
+        position: absolute;
+        right: 20px; /* Coloca la hamburguesa en el lado derecho */
+        top: 20px;
+    }
+    
+    /* Opcional: Oculta el menú completo en móviles si no está activo */
+    .menu-completo {
+        display: none;
+    }
+}
+
+
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* Ajusta el espacio desde el borde inferior */
+    right: 20px; /* Ajusta el espacio desde el borde derecho */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+  }
+  
+  .whatsapp-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white;
+    border-radius: 50%;
+    width: 50px; /* Tamaño del ícono */
+    height: 50px; /* Tamaño del ícono */
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 24px; /* Tamaño del ícono */
+  }
+  
+  .whatsapp-icon a:hover {
+    background-color: #128C7E; /* Color verde oscuro de WhatsApp al pasar el cursor */
+  }
+  

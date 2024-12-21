@@ -1,0 +1,1388 @@
+.derecho-administrativo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Estilo general para todas las secciones */
+.parte {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para la parte con imagen de fondo */
+.parte-imagen-fondo {
+  background-image: url('../img/building-4803602_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 350px 30px;
+  filter: grayscale(100%); /* Convierte la imagen a escala de grises */
+}
+
+.parte-imagen-fondo h2 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.parte-imagen-fondo p {
+  font-size: 2.25rem;
+  text-align: justify;
+}
+
+/* Estilo para la parte sin imagen */
+.parte-sin-imagen {
+  background-color: white;
+  padding: 40px;
+  line-height: 3.6;
+}
+
+.parte-sin-imagen h2 {
+  font-size: 5.6rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.parte-sin-imagen p {
+  font-size: 5rem;
+  text-align: justify;
+}
+
+/* Estilo para la parte con imagen lateral */
+.parte-imagen-lateral {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.parte-imagen-lateral img {
+  max-width: 40%;
+  height: auto;
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.parte-imagen-lateral .texto {
+  max-width: 50%;
+  text-align: justify;
+}
+
+/* Estilo para los datos de derecho administrativo */
+.datos-derecho-administrativo {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.datos-derecho-administrativo h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.datos-derecho-administrativo ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.datos-derecho-administrativo ul li {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .parte-imagen-fondo {
+    padding: 150px 20px;
+  }
+
+  .parte-imagen-fondo h2 {
+    font-size: 2rem;
+  }
+
+  .parte-imagen-fondo p {
+    font-size: 1rem;
+  }
+
+  .parte-sin-imagen {
+    padding: 20px;
+  }
+
+  .parte-sin-imagen h2 {
+    font-size: 2rem;
+  }
+
+  .parte-sin-imagen p {
+    font-size: 1rem;
+  }
+
+  .parte-imagen-lateral {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .parte-imagen-lateral img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .parte-imagen-lateral .texto {
+    max-width: 100%;
+  }
+
+  .datos-derecho-administrativo ul {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .datos-derecho-administrativo ul li {
+    font-size: 16px;
+  }
+}
+
+  
+  .derecho-familiar {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /*FAMILIAR*/
+  
+/* Parte con imagen de fondo en blanco y negro y texto */
+.parte-imagen-fondo2 {
+  background-image: url('../img/beach-4455433_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 260px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Asegura que la superposición no sobresalga */
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.parte-imagen-fondo2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+  z-index: 1; /* Ubica la superposición detrás del contenido */
+}
+
+.parte-imagen-fondo2 .contenido {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima de la superposición */
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo semitransparente para el texto */
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.parte-imagen-fondo2 h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.parte-imagen-fondo2 p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+  
+  /* Parte con experiencia de CJH Abogados con imagen a la derecha */
+  .parte-experiencia {
+    background-color: #e6e6e6;
+    padding: 40px 20px;
+    text-align: left;
+  }
+  
+  .contenido-experiencia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .texto-experiencia {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .texto-experiencia h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  
+  .texto-experiencia p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .imagen-experiencia {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .imagen-experiencia img {
+    width: 100%;
+    border-radius: 8px;
+    filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+  }
+  
+  /* Parte de datos curiosos en bullets */
+  .parte-datos-curiosos {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: left;
+  }
+  
+  .parte-datos-curiosos h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .parte-datos-curiosos ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .parte-datos-curiosos ul li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  /* Botón hacia contacto */
+  .parte-contacto {
+    text-align: center;
+    padding: 40px 0;
+    background-color: white;
+  }
+  
+  .boton-contacto {
+    padding: 15px 30px;
+    background-color: #434344;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-contacto:hover {
+    background-color: #494a4b;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .parte-imagen-fondo {
+      padding: 40px 10px;
+    }
+  
+    .parte-imagen-fondo h2 {
+      font-size: 24px;
+    }
+  
+    .contenido-experiencia {
+      flex-direction: column;
+    }
+  
+    .texto-experiencia {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .texto-experiencia h2 {
+      font-size: 24px;
+    }
+  
+    .texto-experiencia p {
+      font-size: 16px;
+    }
+  
+    .imagen-experiencia {
+      max-width: 100%;
+    }
+  
+    .parte-datos-curiosos ul {
+      padding-left: 10px;
+    }
+  
+    .parte-datos-curiosos ul li {
+      font-size: 16px;
+    }
+  
+    .boton-contacto {
+      font-size: 16px;
+    }
+  }
+  
+ 
+  /* Derecho civil*/
+  
+/* Sección 1: Imagen de fondo con eslogan */
+.hero-section {
+  position: relative; /* Establecer posición relativa para contener el pseudo-elemento */
+  background: url('../img/dcivil.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa de sombra con opacidad */
+  z-index: 1; /* Coloca la sombra detrás del contenido */
+}
+
+.hero-content {
+  position: relative; /* Asegura que el contenido se muestre encima de la sombra */
+  z-index: 2;
+}
+
+
+.hero-content h1 {
+  text-align: justify;
+  font-size: 3.5rem;
+  padding: 0 20px;
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.experience-section {
+  display: flex;
+  align-items: justify;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.experience-content {
+  display: flex;
+  align-items: justify; /* Cambia el alineamiento para que el contenido no quede centrado verticalmente */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-content img {
+  width: 40%;
+  height: auto;
+  margin-right: 40px; /* Aumenta el margen derecho para separar más la imagen del texto */
+}
+
+.text-content {
+  padding: 0 20px; /* Añade padding lateral para más separación */
+}
+
+.text-content h2 {
+  text-align: justify;
+  font-size: 4rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del h2 */
+}
+
+.text-content p {
+  text-align: justify;
+  font-size: 2rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del párrafo */
+}
+
+.text-content li {
+  text-align: justify;
+  font-size: 1.8rem;
+  margin-bottom: 15px; /* Añade espacio entre los elementos de la lista */
+}
+
+/* Sección 3: Datos curiosos */
+.curiosities-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: justify;
+}
+
+.curiosities-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.curiosities-section ul {
+  text-align: justify;
+  list-style-type: disc;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.curiosities-section li {
+  font-size: 1.7rem;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-section {
+      flex-direction: column;
+  }
+
+  .experience-content img {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+      font-size: 2rem;
+  }
+}
+
+/*Corporativo */
+/* Sección 1: Imagen de fondo con eslogan */
+.corporate-hero-section {
+  position: relative;
+  background: url('../img/corp2.jpg') no-repeat center center/cover;
+  background-size: 100%; /* Aumenta o reduce según sea necesario */
+  background-position: center; /* Mueve la imagen hacia arriba */
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.corporate-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar la legibilidad del texto */
+  z-index: 1;
+}
+
+.corporate-hero-content {
+  position: relative;
+  font-size: 1.8rem;
+  z-index: 2;
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.corporate-experience-section {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.corporate-experience-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.corporate-experience-content img {
+  width: 50%;
+  height: auto;
+  margin-right: 40px; /* Separación entre imagen y texto */
+}
+
+.corporate-text-content {
+  padding: 0 20px;
+}
+
+.corporate-text-content h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.corporate-text-content p {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+}
+
+.corporate-text-content li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+
+
+/* Sección 3: Datos curiosos del derecho corporativo */
+.corporate-curiosities-section {
+  padding: 50px 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.corporate-curiosities-section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.corporate-curiosities-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.corporate-curiosities-section li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  /* Sección 1: Ajustar altura del banner */
+  .corporate-hero-section {
+      height: 40vh;
+  }
+
+  /* Sección 2: Poner la imagen encima del texto */
+  .corporate-experience-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .corporate-experience-content img {
+      width: 80%;
+      margin: 0 auto 20px auto;
+  }
+
+  .corporate-text-content {
+      padding: 0;
+  }
+
+  /* Ajustar tamaños de fuente */
+  .corporate-text-content h2 {
+      font-size: 3rem;
+  }
+
+  .corporate-text-content p {
+      font-size: 2.5rem;
+  }
+
+  .corporate-text-content li {
+      font-size: 1.8rem;
+  }
+
+  /* Sección 3: Ajustar tamaños de fuente */
+  .corporate-curiosities-section h2 {
+      font-size: 3rem;
+  }
+
+  .corporate-curiosities-section li {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Sección 1: Ajustar altura del banner para pantallas pequeñas */
+  .corporate-hero-section {
+      height: 30vh;
+  }
+
+  /* Ajustar tamaños de fuente aún más para pantallas muy pequeñas */
+  .corporate-text-content h2 {
+      font-size: 2.5rem;
+  }
+
+  .corporate-text-content p {
+      font-size: 2rem;
+  }
+
+  .corporate-text-content li {
+      font-size: 1.6rem;
+  }
+
+  .corporate-curiosities-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .corporate-curiosities-section li {
+      font-size: 1.6rem;
+  }
+}
+
+/*Fiscal*/
+
+/* Sección 1: Imagen de fondo con eslogan */
+.fiscal-hero-section {
+  position: relative;
+  background: url('../img/valores.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.fiscal-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar la legibilidad del texto */
+  z-index: 1;
+}
+
+.fiscal-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.fiscal-experience-section {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.fiscal-experience-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fiscal-experience-content img {
+  width: 50%;
+  height: auto;
+  margin-right: 40px; /* Separación entre imagen y texto */
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+
+}
+
+.fiscal-text-content {
+  padding: 0 20px;
+}
+
+.fiscal-text-content h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.fiscal-text-content p {
+  font-size: 3.1rem;
+  margin-bottom: 20px;
+}
+
+.fiscal-text-content li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Sección 3: Datos curiosos del derecho fiscal */
+.fiscal-curiosities-section {
+  padding: 50px 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.fiscal-curiosities-section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.fiscal-curiosities-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fiscal-curiosities-section li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  /* Sección 1: Ajustar altura del banner */
+  .fiscal-hero-section {
+      height: 40vh;
+  }
+
+  /* Sección 2: Poner la imagen encima del texto */
+  .fiscal-experience-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .fiscal-experience-content img {
+      width: 80%;
+      margin: 0 auto 20px auto;
+  }
+
+  .fiscal-text-content {
+      padding: 0;
+  }
+
+  /* Ajustar tamaños de fuente */
+  .fiscal-text-content h2 {
+      font-size: 3rem;
+  }
+
+  .fiscal-text-content p {
+      font-size: 2.5rem;
+  }
+
+  .fiscal-text-content li {
+      font-size: 1.8rem;
+  }
+
+  /* Sección 3: Ajustar tamaños de fuente */
+  .fiscal-curiosities-section h2 {
+      font-size: 3rem;
+  }
+
+  .fiscal-curiosities-section li {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Sección 1: Ajustar altura del banner para pantallas pequeñas */
+  .fiscal-hero-section {
+      height: 30vh;
+  }
+
+  /* Ajustar tamaños de fuente aún más para pantallas muy pequeñas */
+  .fiscal-text-content h2 {
+      font-size: 2.5rem;
+  }
+
+  .fiscal-text-content p {
+      font-size: 2rem;
+  }
+
+  .fiscal-text-content li {
+      font-size: 1.6rem;
+  }
+
+  .fiscal-curiosities-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .fiscal-curiosities-section li {
+      font-size: 1.6rem;
+  }
+}
+
+/*laboral*/
+/* Sección 1: Imagen de fondo con eslogan */
+.laboral-hero-section {
+  position: relative;
+  background: url('../img/ventanal.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  filter: grayscale(90%); /* Convierte la imagen a blanco y negro */
+}
+
+.laboral-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar la legibilidad del texto */
+  z-index: 1;
+}
+
+.laboral-hero-content {
+  position: relative;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.laboral-experience-section {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.laboral-experience-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  filter: grayscale(100%);
+}
+
+.laboral-experience-content img {
+  width: 40%;
+  height: auto;
+  margin-right: 40px; /* Separación entre imagen y texto */
+}
+
+.laboral-text-content {
+  padding: 0 20px;
+  align-items: justify;
+}
+
+.laboral-text-content h2 {
+  font-size: 4rem;
+  align-items: justify;
+  margin-bottom: 20px;
+}
+
+.laboral-text-content p {
+  font-size: 2.1rem;
+  align-items: justify;
+  margin-bottom: 20px;
+}
+
+.laboral-text-content li {
+  font-size: 1.7rem;
+  align-items: justify;
+  margin-bottom: 15px;
+}
+
+/* Sección 3: Datos curiosos del derecho laboral */
+.laboral-curiosities-section {
+  padding: 50px 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.laboral-curiosities-section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.laboral-curiosities-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.laboral-curiosities-section li {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  /* Sección 1: Ajustar altura del banner */
+  .laboral-hero-section {
+      height: 40vh;
+  }
+
+  /* Sección 2: Poner la imagen encima del texto */
+  .laboral-experience-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .laboral-experience-content img {
+      width: 80%;
+      margin: 0 auto 20px auto;
+  }
+
+  .laboral-text-content {
+      padding: 0;
+  }
+
+  /* Ajustar tamaños de fuente */
+  .laboral-text-content h2 {
+      font-size: 3rem;
+  }
+
+  .laboral-text-content p {
+      font-size: 2.5rem;
+  }
+
+  .laboral-text-content li {
+      font-size: 1.8rem;
+  }
+
+  /* Sección 3: Ajustar tamaños de fuente */
+  .laboral-curiosities-section h2 {
+      font-size: 3rem;
+  }
+
+  .laboral-curiosities-section li {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Sección 1: Ajustar altura del banner para pantallas pequeñas */
+  .laboral-hero-section {
+      height: 30vh;
+  }
+
+  /* Ajustar tamaños de fuente aún más para pantallas muy pequeñas */
+  .laboral-text-content h2 {
+      font-size: 2.5rem;
+  }
+
+  .laboral-text-content p {
+      font-size: 2rem;
+  }
+
+  .laboral-text-content li {
+      font-size: 1.6rem;
+  }
+
+  .laboral-curiosities-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .laboral-curiosities-section li {
+      font-size: 1.6rem;
+  }
+}
+
+
+/* PLD */
+
+/* Sección 1: Imagen de fondo con eslogan */
+.pld-hero-section {
+  position: relative; /* Establecer posición relativa para contener el pseudo-elemento */
+  background: url('../img/money.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.pld-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa de sombra con opacidad */
+  z-index: 1; /* Coloca la sombra detrás del contenido */
+}
+
+.pld-hero-content {
+  position: relative; /* Asegura que el contenido se muestre encima de la sombra */
+  z-index: 2;
+}
+
+
+.pld-hero-content h1 {
+  text-align: justify;
+  font-size: 4.5rem;
+  padding: 0 20px;
+}
+
+.pld-hero-content p {
+  text-align: justify;
+  font-size: 1.9rem;
+  padding: 0 20px;
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.pld-experience-section {
+  display: flex;
+  align-items: justify;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.pld-experience-content {
+  display: flex;
+  align-items: justify; /* Cambia el alineamiento para que el contenido no quede centrado verticalmente */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pld-experience-content img {
+  width: 40%;
+  height: auto;
+  margin-right: 40px; /* Aumenta el margen derecho para separar más la imagen del texto */
+}
+
+.pld-text-content {
+  padding: 0 20px; /* Añade padding lateral para más separación */
+}
+
+.pld-text-content h2 {
+  text-align: justify;
+  font-size: 4rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del h2 */
+}
+
+.pld-text-content p {
+  text-align: justify;
+  font-size: 2rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del párrafo */
+}
+
+.pld-text-content li {
+  text-align: justify;
+  font-size: 1.8rem;
+  margin-bottom: 15px; /* Añade espacio entre los elementos de la lista */
+
+  .pld-text-content ul {
+    list-style-type: disc;
+    padding-left: 40px; /* Indentación de la lista */
+    font-size: 1.8rem; /* Tamaño del texto */
+    margin-bottom: 20px; /* Espaciado entre el texto y los elementos */
+  }
+  
+  .pld-text-content ul li {
+    margin-bottom: 10px; /* Espaciado entre bullets */
+    line-height: 1.5; /* Altura de línea para mejorar legibilidad */
+  }
+  
+}
+
+/* Sección 3: Datos curiosos */
+.pld-curiosities-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: justify;
+}
+
+.pld-curiosities-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pld-curiosities-section ul {
+  text-align: justify;
+  list-style-type: disc;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pld-curiosities-section li {
+  font-size: 1.7rem;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+
+/*////////////////////////////**/
+
+
+/* Sección 1: Imagen de fondo con eslogan */
+.contacto-hero-section {
+  position: relative; /* Establecer posición relativa para contener el pseudo-elemento */
+  background: url('../img/britalcorp.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
+.contacto-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa de sombra con opacidad */
+  z-index: 1; /* Coloca la sombra detrás del contenido */
+}
+
+.contacto-hero-content {
+  position: relative; /* Asegura que el contenido se muestre encima de la sombra */
+  z-index: 2;
+}
+
+.contacto-hero-content h1 {
+  text-align: justify;
+  font-size: 4.5rem;
+  padding: 0 20px;
+}
+
+.contacto-hero-content p {
+  text-align: justify;
+  font-size: 1.9rem;
+  padding: 0 20px;
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.contacto-experience-section {
+  display: flex;
+  align-items: justify;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.contacto-experience-content {
+  display: flex;
+  align-items: justify; /* Cambia el alineamiento para que el contenido no quede centrado verticalmente */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contacto-experience-content img {
+  width: 40%;
+  height: auto;
+  margin-right: 40px; /* Aumenta el margen derecho para separar más la imagen del texto */
+}
+
+.contacto-text-content {
+  padding: 0 20px; /* Añade padding lateral para más separación */
+}
+
+.contacto-text-content h2 {
+  text-align: justify;
+  font-size: 4rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del h2 */
+}
+
+.contacto-text-content p {
+  text-align: justify;
+  font-size: 2rem;
+  margin-bottom: 20px; /* Aumenta el espacio debajo del párrafo */
+}
+
+.contacto-text-content li {
+  text-align: justify;
+  font-size: 1.8rem;
+  margin-bottom: 15px; /* Añade espacio entre los elementos de la lista */
+
+  .contacto-text-content ul {
+    list-style-type: disc;
+    padding-left: 40px; /* Indentación de la lista */
+    font-size: 1.8rem; /* Tamaño del texto */
+    margin-bottom: 20px; /* Espaciado entre el texto y los elementos */
+  }
+  
+  .contacto-text-content ul li {
+    margin-bottom: 10px; /* Espaciado entre bullets */
+    line-height: 1.5; /* Altura de línea para mejorar legibilidad */
+  }
+  
+}
+
+/* Sección 3: Datos curiosos */
+.contacto-curiosities-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: justify;
+}
+
+.contacto-curiosities-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contacto-curiosities-section ul {
+  text-align: justify;
+  list-style-type: disc;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contacto-curiosities-section li {
+  font-size: 1.7rem;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+
+/*/////////////////////////////////*/
+
+
+.contacto-experience-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.contacto-experience-content {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px; /* Espacio entre el mapa y el contenido de texto */
+}
+
+.mapa {
+  width: 200%;
+  height: auto;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-text-content {
+  padding: 0 20px;
+}
+
+.contacto-text-content h2 {
+  text-align: justify;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.contacto-text-content ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+.contacto-text-content li {
+  text-align: justify;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contacto-experience-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .mapa {
+      width: 90%;
+      height: 300px; /* Ajusta la altura para pantallas pequeñas */
+  }
+
+  .contacto-text-content {
+      padding: 0;
+  }
+}
+
+.footer2__contact {
+  font-family: 'Arial', sans-serif; /* Define la fuente */
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  color: black; /* Define el color del texto */
+  margin-top: 30px; /* Espaciado superior */
+  text-align: right; /* Alineación del texto */
+}
+/* Aumentar el espaciado entre los elementos de contacto */
+.footer2__contact-item {
+  margin-bottom: 15px; /* Añade un margen inferior a cada elemento de contacto */
+}
+
+
+
+.contacto-form-section {
+  padding: 50px 20px;
+  background-color: #686767;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contacto-form-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.contacto-form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-form-section label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  font-size: 1.7rem;
+}
+
+.contacto-form-section input,
+.contacto-form-section textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1.7rem;
+}
+
+.contacto-form-section button {
+  padding: 12px;
+  background-color: #5a5b5c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1.7rem;
+}
+
+.contacto-form-section button:hover {
+  background-color: #343435;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contacto-form-section {
+      padding: 30px 15px;
+  }
+
+  .contacto-form-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .contacto-form-section input,
+  .contacto-form-section textarea {
+      font-size: 1.2rem;
+  }
+
+  .contacto-form-section button {
+      font-size: 1rem;
+  }
+}
+
+

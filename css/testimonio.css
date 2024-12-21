@@ -1,0 +1,341 @@
+/* Contenedor principal de la sección de testimonios */
+/* Contenedor general de testimonios */
+.testimony__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Espaciado entre filas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.testimony__level {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaciado entre testimonios */
+}
+/* Estilo del cuerpo del testimonio */
+.testimony__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 350px;
+    overflow: hidden; /* Para evitar que el zoom de la imagen sobresalga */
+}
+
+
+
+
+/* Imagen cuadrada con efecto de zoom para testimonios */
+.testimony__picture img {
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: 190px; /* Igual al ancho para mantener la forma cuadrada */
+    object-fit: cover;
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    border: 4px solid #ccc;
+    transition: transform 0.5s ease, object-position 0.5s ease;
+    object-position: center;
+}
+
+/* Efecto de zoom al pasar el cursor */
+.testimony__picture:hover img {
+    transform: scale(1.2); /* Aumenta el nivel de zoom */
+    object-position: center top; /* Ajusta el punto de enfoque */
+}
+/* Estilo de los textos */
+.subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.testimony__review {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+/* Estilo para el ícono de LinkedIn */
+.linkedin-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0077b5;
+    font-size: 1.5rem;
+}
+
+.linkedin-link i {
+    transition: color 0.3s ease;
+}
+
+.linkedin-link:hover i {
+    color: #005582;
+}
+
+/* Primer testimonio centrado */
+.testimony__body--center {
+    margin-bottom: 30px;
+}
+
+/* Estilos para los testimonios en la parte inferior (izquierda y derecha) */
+.testimony__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .testimony__bottom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimony__body {
+        max-width: 100%;
+    }
+}
+
+
+/* Contenedor general */
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para cada ítem */
+.info-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas: imagen y texto */
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 400px;
+}
+
+/* Estilo para las imágenes */
+.info-item__image {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    min-height: 400px;
+}
+
+/* Contenido */
+.info-item__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333;
+}
+
+/* Encabezados y párrafos */
+.info-item h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .info-item {
+        grid-template-columns: 1fr; /* Imagen y texto en una sola columna */
+    }
+    .info-item__image {
+        min-height: 200px;
+    }
+}
+
+
+/* Estilo base del botón */
+.buttonmore {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px; /* Reduce el espacio interno */
+    font-size: 2px; /* Tamaño más pequeño del texto */
+    font-weight: bold;
+    color: #fff;
+    background-color: #595b5c; /* Color base del botón */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Sombra más pequeña */
+    transition: all 0.3s ease-in-out; /* Animación suave */
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.buttonmore:hover {
+    background-color: #c1c5ca; /* Azul más oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra ligeramente más pronunciada */
+    transform: translateY(-2px); /* Elevación más sutil */
+}
+
+/* Efecto activo (al hacer clic) */
+.buttonmore:active {
+    background-color: #141516; /* Azul más oscuro */
+    transform: translateY(0); /* Simula presión */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más reducida */
+}
+
+/* Opcional: Versión accesible para teclados */
+.buttonmore:focus {
+    outline: 2px dashed #ffcc00; /* Enfasis con color visible */
+    outline-offset: 2px;
+}
+
+
+
+@media (max-width: 768px) {
+    .buttonmore {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .buttonmore {
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+}
+
+
+/*Ruben */
+
+/* Título principal del Lic. Rubén */
+.ruben-title {
+    text-align: center;
+    font-size: 3rem; /* Aumento del tamaño de la letra */
+    margin: 20px 0;
+    color: #333; /* Gris oscuro */
+}
+
+/* Contenedor general para la presentación de Rubén */
+.ruben-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tarjeta de presentación de Rubén sin borde */
+.ruben-card {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    border: none; /* Eliminamos el borde */
+    box-shadow: none; /* Quitamos la sombra */
+    margin-bottom: 20px;
+}
+
+/* Imagen de Rubén */
+.ruben-image {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.ruben-card img {
+    width: 500px; /* Aumento del tamaño de la imagen */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Información de Rubén */
+.ruben-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Nombre de Rubén */
+.ruben-card .ruben-name {
+    font-size: 2.5rem; /* Aumento del tamaño de la letra */
+    margin: 10px 0;
+    color: #333; /* Gris oscuro */
+    text-transform: uppercase;
+}
+
+/* Cargo de Rubén */
+.ruben-role {
+    font-size: 1.8rem; /* Aumento del tamaño del texto */
+    color: #666; /* Gris intermedio */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Descripción de Rubén */
+.ruben-description {
+    text-align: justify;
+    font-size: 1.7rem; /* Aumento del tamaño del texto */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 10px;
+    color: #333; /* Gris oscuro */
+}
+
+.ruben-description p { margin-bottom: 20px; /* Ajusta el valor según tus preferencias */ }
+
+/* Redes sociales */
+.ruben-socials {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.social-icon {
+    margin-left: 15px;
+    font-size: 1.8rem; /* Aumento del tamaño del ícono */
+    color: #0077b5; /* Color de LinkedIn */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #005582; /* Color más oscuro al pasar el mouse */
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .ruben-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ruben-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .ruben-socials {
+        justify-content: center;
+    }
+}
+
