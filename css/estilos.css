@@ -40,13 +40,10 @@ html{
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas si es necesario */
-        background-size: 150%; /* Aumenta el tamaño de la imagen de fondo en un 30% */
-        background-position: center 0%;
-    }
-
-    
+ .navbar { padding-top: 100px; /* Aumenta el padding superior para bajar la imagen */ 
+          padding-bottom: 60px; /* Ajusta el padding inferior si es necesario */ 
+          background-size: 130%; /* Aumenta el tamaño de la imagen de fondo en un 30% */ 
+ 
 }
 
 
