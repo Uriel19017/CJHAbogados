@@ -26,7 +26,7 @@ html{
     background-size: cover; /* Asegura que la imagen cubra todo el área sin distorsionarse */
     background-position: center; /* Centra la imagen de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: auto ; /* El menú ajusta su altura según su contenido */
+    height: auto; /* El menú ajusta su altura según su contenido */
     width: 100%; /* Asegura que el menú ocupe todo el ancho de la pantalla */
     z-index: 1; /* Asegura que el contenido del navbar esté encima de la imagen */
 }
@@ -36,6 +36,16 @@ html{
     position: relative;
     z-index: 2; /* Asegura que el contenido esté encima de la imagen de fondo */
     /* Otros estilos para el contenido del navbar */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas si es necesario */
+        background-size: 130%; /* Aumenta el tamaño de la imagen de fondo en un 30% */
+    }
+
+    
 }
 
 
@@ -186,11 +196,7 @@ body {
         display: flex; /* Muestra el menú cuando la hamburguesa está activada */
     }
 
-    .navbar {
-        background-size: cover; /* Asegura que la imagen de fondo cubra toda el área en pantallas pequeñas */
-        background-attachment: scroll; /* Permite que la imagen se desplace con el contenido */
-        padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas si es necesario */
-    }
+    
 }
 /* Ventajas */
 @media (min-width: 768px) {
