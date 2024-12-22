@@ -192,7 +192,7 @@ body {
    .navbar {
         padding-top: 60px;
         padding-bottom: 60px;
-        background-size: 150%;
+        background-size: 100%;
         background-position: 150% center;
     }
 }
