@@ -189,11 +189,11 @@ body {
         display: flex; /* Muestra el menú cuando la hamburguesa está activada */
     }
 
-    .navbar {
+   .navbar {
         padding-top: 60px;
         padding-bottom: 60px;
-        background-size: 130%;
-        background-position: 80% center;
+        background-size: 150%;
+        background-position: 120% center;
     }
 }
 
