@@ -43,7 +43,7 @@ html{
     .navbar {
         padding: 60px 5px; /* Ajusta el padding para pantallas pequeñas si es necesario */
         background-size: 150%; /* Aumenta el tamaño de la imagen de fondo en un 30% */
-        background-position: center -50%;
+        background-position: center 90%;
     }
 
     
