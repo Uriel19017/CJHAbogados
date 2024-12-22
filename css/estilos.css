@@ -42,7 +42,7 @@ html{
 @media (max-width: 768px) {
  .navbar { 
      padding-top: 100px; /* Aumenta el padding superior para bajar la imagen */ 
-          padding-bottom: 90px; /* Ajusta el padding inferior si es necesario */ 
+          padding-bottom: 10px; /* Ajusta el padding inferior si es necesario */ 
           background-size: 200%; /* Aumenta el tamaño de la imagen de fondo en un 30% */ 
  
 }
