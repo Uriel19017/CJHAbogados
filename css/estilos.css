@@ -176,7 +176,7 @@ body {
     }
 
     .navbar {
-        background-size: 150%; /* Incrementa el tamaño de la imagen */
+        background-size: 100%; /* Incrementa el tamaño de la imagen */
         background-position: right center; /* Enfoca en la parte derecha */
         padding-top: 50px; /* Ajusta el padding superior */
         padding-bottom: 50px; /* Ajusta el padding inferior */
