@@ -80,6 +80,7 @@ body {
     z-index: 1010; /* Asegura que esté encima del navbar */
 }
 
+/* Estilo para el menú desplegable */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -109,6 +110,51 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* ============================ Estilos Responsivos ============================ */
+
+/* Para pantallas pequeñas (por ejemplo, menos de 768px) */
+@media (max-width: 768px) {
+    /* Desactivar hover y mostrar el dropdown al hacer clic */
+    .dropdown {
+        position: static; /* Cambio de posición para que no se solape con otros elementos */
+    }
+    
+    /* Cambiar la posición del menú desplegable para que sea un menú vertical */
+    .dropdown-content {
+        position: relative; /* Cambiar a posición relativa para alinearlo con el contenedor */
+        top: 0; /* Eliminar el desplazamiento */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Ajuste del color de fondo */
+        padding: 0; /* Reducir el padding */
+        box-shadow: none; /* Eliminar la sombra */
+    }
+    
+    /* Estilo para los enlaces dentro del menú desplegable */
+    .dropdown-content li {
+        margin: 10px 0;
+    }
+    
+    /* Mostrar el menú desplegable al hacer clic */
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    /* Opcional: Cambiar el tamaño de la fuente para pantallas pequeñas */
+    .dropdown-content li a {
+        font-size: 14px;
+    }
+}
+
+/* Para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    /* Estilo adicional para pantallas más pequeñas */
+    .dropdown-content li a {
+        font-size: 12px; /* Hacer el texto más pequeño */
+        padding: 8px; /* Agregar un poco de padding para facilitar el clic */
+    }
+}
+
 
 /* Capa adicional para asegurar que el menú esté por encima de todo */
 
