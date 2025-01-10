@@ -1,4 +1,3 @@
-// Espera a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     const selectors = {
         hamburger: '.hamburger',
@@ -54,11 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         serviciosDropdown?.classList.toggle('active');
     });
-});
 
-// Función para desplazamiento suave
-function cambioSeccion(seccion) {
-    seccion.scrollIntoView({
-        behavior: 'smooth',
+    // Evitar que el dropdown se cierre al hacer clic dentro
+    serviciosDropdown?.addEventListener('click', (event) => {
+        event.stopPropagation();
     });
-}
+
+    // Cerrar el dropdown si el usuario hace clic fuera de él
+    document.addEventListener('click', (event) => {
+        if (!serviciosDropdown?.contains(event.target) && !serviciosLink?.contains(event.target)) {
+            serviciosDropdown?.classList.remove('active');
+        }
+    });
+});
