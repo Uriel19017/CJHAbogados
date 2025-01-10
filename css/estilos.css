@@ -53,24 +53,25 @@ body {
 /* Ajustes solo para pantallas pequeñas */
 @media (max-width: 768px) {
     .navbar {
-        height: 120px; /* Reduce la altura */
+        height: 150px; /* Aumenta ligeramente la altura */
         background-image: url('../img/Banner\ web_CJH_4256x2832.jpg'); /* Usa la imagen proporcionada */
-        background-size: contain; /* Asegura que se ajuste sin recortes */
+        background-size: 120%; /* Aplica un leve zoom */
         background-repeat: no-repeat; /* Evita repeticiones */
-        background-position: center center; /* Centra la imagen */
-        padding: 0; /* Sin espacio extra */
+        background-position: center 20%; /* Baja la imagen un poco (20% desde arriba) */
+        padding: 0; /* Sin espacio adicional */
     }
 }
 
 /* Ajustes para pantallas extra pequeñas (menos de 480px) */
 @media (max-width: 480px) {
     .navbar {
-        height: 100px; /* Altura compacta */
-        background-size: 80%; /* Ajusta un poco más el tamaño */
-        background-position: center center; /* Centrado perfecto */
-        padding: 10px 5px; /* Espacio mínimo */
+        height: 130px; /* Altura compacta */
+        background-size: 150%; /* Aplica más zoom */
+        background-position: center 30%; /* Baja la imagen un poco más */
+        padding: 0; /* Sin espacio adicional */
     }
 }
+
 
 /* Menú de navegación */
 .nav-menu {
