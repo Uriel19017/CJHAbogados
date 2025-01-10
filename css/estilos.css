@@ -50,6 +50,7 @@ body {
 }
 
 
+
 @media (max-width: 768px) {
     .navbar {
         background-size: contain;
@@ -65,6 +66,7 @@ body {
         min-height: 200px; /* Ajusta la altura según sea necesario */
     }
 }
+
 
 
 
