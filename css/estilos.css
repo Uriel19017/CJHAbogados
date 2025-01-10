@@ -56,6 +56,7 @@ body {
         background-size: contain;
         background-position: right center;
         min-height: 200px; /* Ajusta la altura según sea necesario */
+        padding: 10px;
     }
 }
 
@@ -64,6 +65,7 @@ body {
         background-size: contain;
         background-position: right center;
         min-height: 200px; /* Ajusta la altura según sea necesario */
+        padding: 10px;
     }
 }
 
