@@ -1,98 +1,64 @@
 // Espera a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburguesa = document.querySelector('.hamburguesa');
-    const navegacion = document.querySelector('.navegacion');
-    const enlaces = document.querySelectorAll('.navegacion a');
-    const fecha = document.querySelector('.fecha');
-    const serviciosLink = document.getElementById('servicios-link');
-    const serviciosSubmenu = document.getElementById('servicios-submenu');
-    const serviciosContainer = document.querySelector('.servicios-container');
-    const buttonNext = document.querySelector('#next');
-    const buttonBefore = document.querySelector('#before');
-    const sliders = [...document.querySelectorAll('.testimony__body')];
+    const selectors = {
+        hamburger: '.hamburger',
+        navMenu: '.nav-menu',
+        enlaces: '.nav-menu a',
+        fecha: '.fecha',
+        serviciosLink: '#servicios-link',
+        serviciosDropdown: '.dropdown-content',
+        buttonNext: '#next',
+        buttonBefore: '#before',
+        sliders: '.testimony__body',
+    };
 
-    // Mostrar el menú al hacer clic en la hamburguesa
-    if (hamburguesa && navegacion) {
-        hamburguesa.addEventListener('click', () => {
-            navegacion.classList.toggle('ocultar');
-        });
-    }
-
-    // Cerrar el menú al hacer clic en los enlaces
-    if (enlaces.length > 0) {
-        enlaces.forEach(enlace => {
-            enlace.addEventListener('click', (e) => {
-                const href = e.target.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const seccion = document.querySelector(href);
-                    if (seccion) {
-                        cambioSeccion(seccion);
-                    }
-                }
-                if (e.target.tagName === 'A') {
-                    navegacion.classList.add('ocultar');
-                }
-            });
-        });
-    }
-
-    // Actualizar el año en el elemento .fecha
-    if (fecha) {
-        fechaActual();
-    }
-
-    function fechaActual() {
-        let fechaHoy = new Date().getFullYear();
-        fecha.textContent = fechaHoy;
-    }
-
-    // Configurar el slider de testimonios
-    if (buttonNext && buttonBefore && sliders.length > 0) {
-        buttonNext.addEventListener('click', () => {
-            changePosition(1);
-        });
-
-        buttonBefore.addEventListener('click', () => {
-            changePosition(-1);
-        });
-    }
-
-    const changePosition = (add) => {
-        const currentTestimony = document.querySelector('.testimony__body--show').dataset.id;
-        let value = Number(currentTestimony);
-        value += add;
-
-        sliders[Number(currentTestimony) - 1].classList.remove('testimony__body--show');
-        if (value === sliders.length + 1 || value === 0) {
-            value = value === 0 ? sliders.length : 1;
-        }
-
-        sliders[value - 1].classList.add('testimony__body--show');
-    }
-
-    // Mostrar/ocultar el submenú de servicios
-    if (serviciosLink && serviciosContainer) {
-        serviciosLink.addEventListener('click', function(event) {
-            event.preventDefault(); // Evita que el enlace redirija
-            serviciosContainer.classList.toggle('active'); // Alterna la clase activa para mostrar/ocultar el submenú
-        });
-    }
+    const hamburger = document.querySelector(selectors.hamburger);
+    const navMenu = document.querySelector(selectors.navMenu);
+    const enlaces = document.querySelectorAll(selectors.enlaces);
+    const fecha = document.querySelector(selectors.fecha);
+    const serviciosLink = document.querySelector(selectors.serviciosLink);
+    const serviciosDropdown = document.querySelector(selectors.serviciosDropdown);
+    const buttonNext = document.querySelector(selectors.buttonNext);
+    const buttonBefore = document.querySelector(selectors.buttonBefore);
+    const sliders = [...document.querySelectorAll(selectors.sliders)];
 
     // Mostrar/ocultar el menú de navegación en pantallas pequeñas
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    hamburger?.addEventListener('click', () => navMenu?.classList.toggle('show'));
 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('show');
-        });
-    }
+    // Delegación de eventos para cerrar el menú al hacer clic en los enlaces
+    navMenu?.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') navMenu.classList.remove('show');
+    });
+
+    // Actualizar el año dinámicamente
+    if (fecha) fecha.textContent = new Date().getFullYear();
+
+    // Configurar el slider de testimonios
+    const changePosition = (add) => {
+        const currentTestimony = document.querySelector('.testimony__body--show')?.dataset.id;
+        if (!currentTestimony) return;
+
+        let value = Number(currentTestimony) + add;
+        sliders[Number(currentTestimony) - 1]?.classList.remove('testimony__body--show');
+        if (value > sliders.length) value = 1;
+        if (value < 1) value = sliders.length;
+
+        sliders[value - 1]?.classList.add('testimony__body--show');
+    };
+
+    buttonNext?.addEventListener('click', () => changePosition(1));
+    buttonBefore?.addEventListener('click', () => changePosition(-1));
+
+    // Mostrar/ocultar el submenú de servicios
+    serviciosLink?.addEventListener('click', (event) => {
+        event.preventDefault();
+        serviciosDropdown?.classList.toggle('active');
+    });
 });
 
-// Función para cambiar de sección con desplazamiento suave
+// Función para desplazamiento suave
 function cambioSeccion(seccion) {
     seccion.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 }
