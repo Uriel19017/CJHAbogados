@@ -49,22 +49,26 @@ body {
     padding-right: 10%; /* Asegura que el contenido no obstruya el logo en el lado derecho */
 }
 
-
+/* Ajustes solo para pantallas pequeñas */
 @media (max-width: 768px) {
     .navbar {
-        background-size: contain;
+        background-size: 200%; /* Mantener el mayor zoom en pantallas pequeñas */
         background-position: right center;
         min-height: 200px; /* Ajusta la altura según sea necesario */
+        padding: 10px; /* Ajusta el padding según sea necesario */
     }
 }
 
+/* Ajustes para pantallas extra pequeñas (menos de 480px) */
 @media (max-width: 480px) {
     .navbar {
-        background-size: contain;
+        background-size: 200%; /* Mantener el mayor zoom en pantallas muy pequeñas */
         background-position: right center;
         min-height: 200px; /* Ajusta la altura según sea necesario */
+        padding: 10px; /* Ajusta el padding según sea necesario */
     }
 }
+
 
 /* Menú de navegación */
 .nav-menu {
