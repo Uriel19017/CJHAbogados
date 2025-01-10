@@ -639,7 +639,7 @@ body {
     background-size: cover;
     background-position: center;
     transition: all .1s ease-out;
-    background-image: url('../assets/img/banner-5.jpg');
+    
     animation: banner 15s infinite linear;
 }
 
