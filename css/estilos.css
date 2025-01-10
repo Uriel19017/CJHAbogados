@@ -55,7 +55,7 @@ body {
     .navbar {
         height: 100px; /* Aumenta ligeramente la altura */
         background-image: url('../img/Banner\ web_CJH_4256x2832recorte.jpg'); /* Usa la imagen proporcionada */
-        background-size: 150%; /* Aplica un leve zoom */
+        background-size: 100%; /* Aplica un leve zoom */
         background-repeat: no-repeat; /* Evita repeticiones */
         background-position: center 50%; /* Baja la imagen un poco (20% desde arriba) */
         padding: 0; /* Sin espacio adicional */
@@ -66,7 +66,7 @@ body {
 @media (max-width: 480px) {
     .navbar {
         height: 160px; /* Altura compacta */
-        background-size: 160%; /* Aplica más zoom */
+        background-size: 100%; /* Aplica más zoom */
         background-position: center 60%; /* Baja la imagen un poco más */
         padding: 0; /* Sin espacio adicional */
     }
