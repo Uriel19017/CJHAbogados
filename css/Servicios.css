@@ -68,6 +68,24 @@
   text-align: justify;
 }
 
+.parte-imagen-lateral .texto h2 {
+  margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+  font-size: 24px; /* Opcional: Tamaño del título */
+}
+
+.parte-imagen-lateral .texto p, 
+.parte-imagen-lateral .texto ul li {
+  font-size: 2rem; /* Cambia este valor según el diseño */
+  margin-bottom: 15px; /* Espacio uniforme entre elementos */
+  line-height: 1.6; /* Espaciado interno para legibilidad */
+}
+
+.parte-imagen-lateral .texto ul {
+  margin-top: 15px; /* Espacio entre el párrafo y la lista */
+}
+
+
+
 /* Estilo para los datos de derecho administrativo */
 .datos-derecho-administrativo {
   background-color: #f9f9f9;
@@ -656,11 +674,20 @@
   background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar la legibilidad del texto */
   z-index: 1;
 }
-
 .fiscal-hero-content {
   position: relative;
   z-index: 2;
+  font-size: 2rem; /* Cambia el tamaño de la letra, por ejemplo, a 2rem */
+  font-weight: bold; /* Opcional: hace la letra más gruesa */
+  line-height: 1.5; /* Ajusta la altura de línea para una mejor legibilidad */
 }
+@media (max-width: 768px) {
+  .fiscal-hero-content {
+    font-size: 1.3rem; /* Tamaño más pequeño para pantallas pequeñas */
+  }
+}
+
+
 
 
 /* Sección 2: Experiencia con imagen a la izquierda */
@@ -1003,20 +1030,23 @@
 .pld-hero-content {
   position: relative; /* Asegura que el contenido se muestre encima de la sombra */
   z-index: 2;
+  display: flex; /* Activar Flexbox */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  text-align: center; /* Centrar texto dentro de cada elemento */
 }
 
-
 .pld-hero-content h1 {
-  text-align: justify;
   font-size: 4.5rem;
   padding: 0 20px;
 }
 
 .pld-hero-content p {
-  text-align: justify;
   font-size: 1.9rem;
   padding: 0 20px;
 }
+
 
 /* Sección 2: Experiencia con imagen a la izquierda */
 .pld-experience-section {
@@ -1100,6 +1130,49 @@
   text-align: justify;
   margin: 10px 0;
 }
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .pld-hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .pld-hero-content p {
+    font-size: 1.7rem;
+  }
+
+  .pld-experience-content img {
+    width: 50%; /* Ajusta el tamaño de la imagen */
+    margin-right: 20px;
+  }
+
+  .pld-text-content h2 {
+    font-size: 3rem;
+  }
+
+  .pld-text-content p,
+  .pld-text-content li {
+    font-size: 1.6rem;
+  }
+}
+
+/* Pantallas pequeñas (smartphones) */
+@media (max-width: 768px) {
+  .pld-experience-content {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .pld-experience-content img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+    margin: 0 0 20px 0; /* Elimina margen lateral y agrega margen inferior */
+  }
+
+  .pld-text-content {
+    padding: 0 10px; /* Reduce el padding lateral para mejor ajuste en pantallas pequeñas */
+  }
+}
+
 
 
 /*////////////////////////////**/
@@ -1382,6 +1455,267 @@
 
   .contacto-form-section button {
       font-size: 1rem;
+  }
+}
+
+/* Civil */
+
+/* Sección 1: Imagen de fondo con eslogan */
+.civil-hero-section {
+  position: relative;
+  background: url('../img/unam-2167334_1280.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.civil-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombra oscura para mejorar la legibilidad del texto */
+  z-index: 1;
+}
+.civil-hero-content {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem; /* Cambia el tamaño de la letra, por ejemplo, a 2rem */
+  font-weight: bold; /* Opcional: hace la letra más gruesa */
+  line-height: 1.5; /* Ajusta la altura de línea para una mejor legibilidad */
+}
+@media (max-width: 768px) {
+  .civil-hero-content {
+    font-size: 1.3rem; /* Tamaño más pequeño para pantallas pequeñas */
+  }
+}
+
+/* Sección 2: Experiencia con imagen a la izquierda */
+.civil-experience-section {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.civil-experience-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.civil-experience-content img {
+  width: 50%;
+  height: auto;
+  margin-right: 40px; /* Separación entre imagen y texto */
+  filter: grayscale(100%); /* Convierte la imagen a blanco y negro */
+}
+
+.civil-text-content {
+  padding: 0 20px;
+}
+
+.civil-text-content h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.civil-text-content p {
+  font-size: 3.1rem;
+  margin-bottom: 20px;
+}
+
+.civil-text-content li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Sección 3: Datos curiosos del derecho civil */
+.civil-curiosities-section {
+  padding: 50px 20px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.civil-curiosities-section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.civil-curiosities-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.civil-curiosities-section li {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  /* Sección 1: Ajustar altura del banner */
+  .civil-hero-section {
+      height: 40vh;
+  }
+
+  /* Sección 2: Poner la imagen encima del texto */
+  .civil-experience-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .civil-experience-content img {
+      width: 80%;
+      margin: 0 auto 20px auto;
+  }
+
+  .civil-text-content {
+      padding: 0;
+  }
+
+  /* Ajustar tamaños de fuente */
+  .civil-text-content h2 {
+      font-size: 3rem;
+  }
+
+  .civil-text-content p {
+      font-size: 2.5rem;
+  }
+
+  .civil-text-content li {
+      font-size: 1.8rem;
+  }
+
+  /* Sección 3: Ajustar tamaños de fuente */
+  .civil-curiosities-section h2 {
+      font-size: 3rem;
+  }
+
+  .civil-curiosities-section li {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Sección 1: Ajustar altura del banner para pantallas pequeñas */
+  .civil-hero-section {
+      height: 30vh;
+  }
+
+  /* Ajustar tamaños de fuente aún más para pantallas muy pequeñas */
+  .civil-text-content h2 {
+      font-size: 2.5rem;
+  }
+
+  .civil-text-content p {
+      font-size: 2rem;
+  }
+
+  .civil-text-content li {
+      font-size: 1.6rem;
+  }
+
+  .civil-curiosities-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .civil-curiosities-section li {
+      font-size: 1.6rem;
+  }
+}
+
+
+/* Estilos para la sección de servicios */
+.services-section {
+  background-color: #f5f5f5;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.service {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  filter: grayscale(100%); /* Aplica el filtro blanco y negro */
+  transition: filter 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.service img:hover {
+  filter: grayscale(0%); /* Elimina el filtro al pasar el mouse */
+}
+
+.service h3 {
+  font-size: 2.0rem;
+  color: black; /* Azul profesional */
+  margin-bottom: 10px;
+}
+
+.service h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service h3 a:hover {
+  text-decoration: underline;
+}
+
+.service p {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    margin-bottom: 20px;
   }
 }
 
