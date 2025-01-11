@@ -55,7 +55,7 @@ body {
     .navbar {
         background-size: contain;
         background-position: right center;
-        min-height: 150px; /* Ajusta la altura según sea necesario */
+        min-height: 250px; /* Ajusta la altura según sea necesario */
        
     }
 }
@@ -64,7 +64,7 @@ body {
     .navbar {
         background-size: contain;
         background-position: right center;
-        min-height: 150px; /* Ajusta la altura según sea necesario */
+        min-height: 250px; /* Ajusta la altura según sea necesario */
         
     }
 }
