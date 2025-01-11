@@ -47,6 +47,7 @@ body {
     position: relative;
     z-index: 2; /* Mantiene el contenido por encima de la imagen de fondo */
     padding-right: 10%; /* Asegura que el contenido no obstruya el logo en el lado derecho */
+    margin:0;
 }
 
 
@@ -55,7 +56,7 @@ body {
     .navbar {
         background-size: contain;
         background-position: right center;
-        min-height: 200px; /* Ajusta la altura según sea necesario */
+        min-height: 150px; /* Ajusta la altura según sea necesario */
         padding:0;
         margin:0;
        
@@ -66,7 +67,7 @@ body {
     .navbar {
         background-size: contain;
         background-position: right center;
-        min-height: 200px; /* Ajusta la altura según sea necesario */
+        min-height: 150px; /* Ajusta la altura según sea necesario */
         padding:0;
         margin:0;
         
