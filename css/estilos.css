@@ -55,16 +55,15 @@ body, html {
 
 
 
-/* Menú de navegación */
+/* ======================= Menú de navegación ======================= */
 .nav-menu {
     display: flex;
     list-style: none;
     margin-top: 50px;
     align-items: center; /* Alinea verticalmente los elementos del menú */
     justify-content: flex-start; /* Alinea los elementos a la izquierda */
-    padding-left: 0; /* Asegúrate de que no haya espacio adicional a la izquierda */
+    padding-left: 0; /* Quita el padding a la izquierda */
 }
-
 
 .nav-menu li {
     margin: 0 20px;
@@ -83,14 +82,12 @@ body, html {
     color: black; /* Cambia de color al pasar el cursor */
 }
 
-/* Estilos generales para el menú desplegable */
-/* Estilo base para el dropdown */
+/* ======================= Menú desplegable ======================= */
 .dropdown {
     position: relative; /* Posiciona correctamente el dropdown-content */
     z-index: 1010; /* Asegura que esté encima del navbar */
 }
 
-/* Menú desplegable */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -104,24 +101,21 @@ body, html {
     border-radius: 5px; /* Bordes redondeados para un diseño moderno */
 }
 
-/* Elementos del menú desplegable */
 .dropdown-content li {
     margin: 5px 0;
 }
 
-/* Enlaces dentro del menú desplegable */
 .dropdown-content li a {
     color: white;
     font-size: 16px;
     text-decoration: none; /* Sin subrayado */
     white-space: nowrap; /* Evita que los enlaces se partan */
-    padding: 5px 10px; /* Espaciado interno */
+    padding: 5px 10px;
     display: block; /* Hace clickeable todo el área */
-    border-radius: 3px; /* Suaviza el diseño */
-    transition: background-color 0.3s ease; /* Animación para hover */
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
 }
 
-/* Hover sobre los enlaces del menú */
 .dropdown-content li a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el mouse */
 }
@@ -135,81 +129,6 @@ body, html {
 
 /* Para pantallas pequeñas (menos de 768px) */
 @media (max-width: 768px) {
-    .dropdown {
-        position: static; /* Cambia la posición para un diseño vertical */
-    }
-    
-    .dropdown-content {
-        position: static; /* Menú desplegable en línea */
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-        padding: 0; /* Sin padding extra */
-        box-shadow: none; /* Sin sombra */
-    }
-
-    .dropdown-content li {
-        margin: 10px 0; /* Espaciado mayor entre opciones */
-    }
-
-    .dropdown-content li a {
-        font-size: 14px; /* Texto ligeramente más pequeño */
-        padding: 10px; /* Más espacio para el toque en móviles */
-    }
-
-    /* Mostrar el menú desplegable al hacer clic (agregar clase `.open`) */
-    .dropdown.open .dropdown-content {
-        display: block;
-    }
-}
-
-/* Para pantallas muy pequeñas (menos de 480px) */
-@media (max-width: 480px) {
-    .dropdown-content li a {
-        font-size: 12px; /* Reducir el tamaño del texto */
-        padding: 8px; /* Ajustar el espaciado */
-    }
-}
-
-/* Capa adicional para asegurar que el menú esté por encima de todo */
-
-
-
-/* Estilos para íconos de redes sociales */
-.social-icons {
-    display: flex;
-    justify-content: flex-start; /* Alinea los íconos a la izquierda */
-    gap: 15px;
-    position: absolute; /* Posiciona los íconos fuera del flujo normal */
-    top: 10px; /* Ajusta la posición desde la parte superior */
-    left: 10px; /* Ajusta la posición desde la izquierda */
-    z-index: 2; /* Asegura que los íconos estén encima del contenido */
-}
-    
-/* Estilo para los íconos de redes sociales */
-.social-icons a {
-    color: white;
-    font-size: 40px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: black;
-}
-
-/* Estilo para la hamburguesa */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 25px;
-    color: black;
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Ajusta la posición de la hamburguesa */
-    z-index: 2; /* Asegura que la hamburguesa esté encima del contenido */
-}
-
-/* Oculta el menú de navegación y los íconos de redes sociales en pantallas pequeñas */
-@media (max-width: 768px) {
     .social-icons {
         display: none; /* Oculta los íconos de redes sociales en pantallas pequeñas */
     }
@@ -217,8 +136,7 @@ body, html {
     .hamburger {
         display: block; /* Muestra la hamburguesa en pantallas pequeñas */
     }
-/* Menú */
-    /* Menú */
+
     .nav-menu {
         display: none; /* Ocultar por defecto */
         flex-direction: column;
@@ -239,15 +157,43 @@ body, html {
         margin: 10px 0;
     }
 
-  
+    .dropdown {
+        position: static; /* Cambia la posición para un diseño vertical */
+    }
+    
+    .dropdown-content {
+        position: static; /* Menú desplegable en línea */
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+        padding: 0; /* Sin padding extra */
+        box-shadow: none; /* Sin sombra */
+    }
+
+    .dropdown-content li {
+        margin: 10px 0; /* Espaciado mayor entre opciones */
+    }
+
+    .dropdown-content li a {
+        font-size: 14px; /* Texto ligeramente más pequeño */
+        padding: 10px; /* Más espacio para el toque en móviles */
+    }
+
+    /* Mostrar el menú desplegable al hacer clic */
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
 }
 
+/* Para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
     .nav-menu li a {
         font-size: 12px;
         padding: 8px;
     }
-}
+
+    .dropdown-content li a {
+        font-size: 12px; /* Reducir el tamaño del texto */
+        padding: 8px; /* Ajustar el esp
+
 
 /* Ventajas */
 @media (min-width: 768px) {
