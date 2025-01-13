@@ -89,19 +89,17 @@ body, html {
 
 /* Menú desplegable */
 .dropdown-content {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    top: 100%; /* Justo debajo del enlace principal */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
     list-style: none;
     padding: 10px;
-    z-index: 1020;
-    border-radius: 5px;
+    z-index: 1020; /* Más alto que otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Bordes redondeados para un diseño moderno */
 }
-
-.dropdown-content.active {
-    display: block; /* Mostrar el submenú cuando está activo */
-}
-
 
 /* Elementos del menú desplegable */
 .dropdown-content li {
@@ -246,6 +244,7 @@ body, html {
         font-size: 12px;
         padding: 8px;
     }
+}
 }
 
 /* Ventajas */
