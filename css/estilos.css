@@ -261,16 +261,17 @@ body {
     text-align: center;
     font-family: Arial, sans-serif; /* Fuente específica */
     transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
+    cursor: default; /* Cambia el cursor para que no parezca clicable */
 }
 
 .ventaja i {
     font-size: 3rem; /* Tamaño de los íconos */
-    color: white; /* Color destacado (puedes cambiarlo según diseño) */
+    color: white; /* Color destacado */
     margin-bottom: 1rem; /* Espacio debajo del ícono */
 }
 
 .ventaja h3 {
-    font-size: 2.5rem; /* Tamaño de texto */
+    font-size: 2.5rem; /* Tamaño del texto */
     margin-top: 1rem; /* Espacio arriba del título */
     color: #ffffff; /* Color del texto */
 }
@@ -283,6 +284,13 @@ body {
 
 .ventaja:hover {
     transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Ajuste para eliminar apariencia de enlace */
+.ventaja a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del contenedor padre */
+    pointer-events: none; /* Desactiva la interacción del enlace */
 }
 
 
