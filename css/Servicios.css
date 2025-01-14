@@ -1209,9 +1209,32 @@
 
 .contacto-hero-content h1 {
   text-align: justify;
-  font-size: 4.5rem;
+  font-size: 4.5rem; /* Tamaño base para pantallas grandes */
   padding: 0 20px;
+  line-height: 1.2; /* Mejora la legibilidad del texto */
 }
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .contacto-hero-content h1 {
+    font-size: 3.5rem; /* Reducir tamaño del texto para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-hero-content h1 {
+    font-size: 2.8rem; /* Reducir más el tamaño para tablets */
+    padding: 0 15px; /* Ajustar el padding para adaptarse */
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-hero-content h1 {
+    font-size: 2rem; /* Tamaño adecuado para dispositivos móviles */
+    padding: 0 10px; /* Reducir el padding para pantallas pequeñas */
+  }
+}
+
 
 .contacto-hero-content p {
   text-align: justify;
@@ -1260,20 +1283,20 @@
   text-align: justify;
   font-size: 1.8rem;
   margin-bottom: 15px; /* Añade espacio entre los elementos de la lista */
-
-  .contacto-text-content ul {
-    list-style-type: disc;
-    padding-left: 40px; /* Indentación de la lista */
-    font-size: 1.8rem; /* Tamaño del texto */
-    margin-bottom: 20px; /* Espaciado entre el texto y los elementos */
-  }
-  
-  .contacto-text-content ul li {
-    margin-bottom: 10px; /* Espaciado entre bullets */
-    line-height: 1.5; /* Altura de línea para mejorar legibilidad */
-  }
-  
 }
+
+.contacto-text-content ul {
+  list-style-type: disc;
+  padding-left: 40px; /* Indentación de la lista */
+  font-size: 1.8rem; /* Tamaño del texto */
+  margin-bottom: 20px; /* Espaciado entre el texto y los elementos */
+}
+
+.contacto-text-content ul li {
+  margin-bottom: 10px; /* Espaciado entre bullets */
+  line-height: 1.5; /* Altura de línea para mejorar legibilidad */
+}
+
 
 /* Sección 3: Datos curiosos */
 .contacto-curiosities-section {
