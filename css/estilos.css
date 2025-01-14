@@ -7,53 +7,47 @@
     --parrafos:'Arial', Arial;
 }
 
-
-
-/* Estilo para la navbar */
-.navbar {
-    position: relative;
-    padding: 0; /* Elimina padding extra */
-    margin: 0; /* Elimina márgenes extra */
-    background-image: url('../img/Banner web_CJH_4256x2832.jpg');
-    background-size: cover; /* La imagen cubrirá todo el espacio del contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 300px; /* Altura mínima para pantallas grandes */
-    display: flex; /* Usamos flex para alinear el contenido */
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente el contenido */
-    align-items: center; /* Centra horizontalmente el contenido */
-    overflow: hidden; /* Evita desbordamientos */
-}
-
-/* Estilo específico para evitar el espacio en blanco */
-body, html {
-    margin: 0; /* Elimina márgenes globales */
-    padding: 0; /* Elimina paddings globales */
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Evita desbordamiento horizontal */
+html{
     box-sizing: border-box;
+    font-size: 62.5%;
+    /* scroll-behavior: smooth; */
 }
 
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .navbar {
-        min-height: 200px; /* Ajusta la altura */
-        background-size: cover; /* Asegura que la imagen se escale bien */
-        background-position: center;
-    }
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Arial;
+    /* No le aplicamos imagen de fondo al cuerpo para que no afecte la página entera */
 }
 
-@media (max-width: 480px) {
-    .navbar {
-        min-height: 150px; /* Ajusta la altura para pantallas muy pequeñas */
-        background-size: cover;
-        background-position: center;
-    }
+.navbar, body {
+    overflow: visible;
 }
 
+
+/* Estilo del contenedor principal */
+.navbar {
+    position: relative; /* Necesario para que los elementos hijos con z-index funcionen */
+    padding: 90px 2px;
+    background-image: url('../img/Banner\ web_CJH_4256x2832.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    z-index: 1000; /* Eleva el navbar sobre el resto del contenido */
+    overflow: visible; /* Asegura que el contenido dentro no se recorte */
+}
+
+/* Ajusta la posición del contenido dentro del navbar si es necesario */
+.navbar__content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima de la imagen de fondo */
+    /* Otros estilos para el contenido del navbar */
+}
 
 /* Menú de navegación */
 .nav-menu {
@@ -81,90 +75,86 @@ body, html {
 }
 
 /* Estilos generales para el menú desplegable */
-/* Estilo base para el dropdown */
 .dropdown {
-    position: relative; /* Posiciona correctamente el dropdown-content */
+    position: relative; /* Necesario para posicionar correctamente el dropdown-content */
     z-index: 1010; /* Asegura que esté encima del navbar */
 }
 
-/* Menú desplegable */
+/* Estilo para el menú desplegable */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Justo debajo del enlace principal */
+    top: 100%; /* Justo debajo del enlace del menú */
     left: 0;
     background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
     list-style: none;
     padding: 10px;
-    z-index: 1020; /* Más alto que otros elementos */
+    z-index: 1020; /* Más alto que todos los demás elementos */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px; /* Bordes redondeados para un diseño moderno */
 }
 
-/* Elementos del menú desplegable */
+/* Estilos para los elementos de la lista del menú desplegable */
 .dropdown-content li {
     margin: 5px 0;
 }
 
-/* Enlaces dentro del menú desplegable */
+/* Estilos para los enlaces dentro del menú desplegable */
 .dropdown-content li a {
     color: white;
     font-size: 16px;
-    text-decoration: none; /* Sin subrayado */
-    white-space: nowrap; /* Evita que los enlaces se partan */
-    padding: 5px 10px; /* Espaciado interno */
-    display: block; /* Hace clickeable todo el área */
-    border-radius: 3px; /* Suaviza el diseño */
-    transition: background-color 0.3s ease; /* Animación para hover */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    white-space: nowrap; /* Evita que los enlaces se partan en varias líneas */
 }
 
-/* Hover sobre los enlaces del menú */
-.dropdown-content li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el mouse */
-}
-
-/* Mostrar el menú al hacer hover en pantallas grandes */
+/* Mostrar el menú desplegable al hacer hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* ======================= Estilos Responsivos ======================= */
+/* ============================ Estilos Responsivos ============================ */
 
-/* Para pantallas pequeñas (menos de 768px) */
+/* Para pantallas pequeñas (por ejemplo, menos de 768px) */
 @media (max-width: 768px) {
+    /* Desactivar hover y mostrar el dropdown al hacer clic */
     .dropdown {
-        position: static; /* Cambia la posición para un diseño vertical */
+        position: static; /* Cambio de posición para que no se solape con otros elementos */
     }
     
+    /* Cambiar la posición del menú desplegable para que sea un menú vertical */
     .dropdown-content {
-        position: static; /* Menú desplegable en línea */
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-        padding: 0; /* Sin padding extra */
-        box-shadow: none; /* Sin sombra */
+        position: relative; /* Cambiar a posición relativa para alinearlo con el contenedor */
+        top: 0; /* Eliminar el desplazamiento */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Ajuste del color de fondo */
+        padding: 0; /* Reducir el padding */
+        box-shadow: none; /* Eliminar la sombra */
     }
-
+    
+    /* Estilo para los enlaces dentro del menú desplegable */
     .dropdown-content li {
-        margin: 10px 0; /* Espaciado mayor entre opciones */
+        margin: 10px 0;
     }
-
-    .dropdown-content li a {
-        font-size: 14px; /* Texto ligeramente más pequeño */
-        padding: 10px; /* Más espacio para el toque en móviles */
-    }
-
-    /* Mostrar el menú desplegable al hacer clic (agregar clase `.open`) */
+    
+    /* Mostrar el menú desplegable al hacer clic */
     .dropdown.open .dropdown-content {
         display: block;
+    }
+
+    /* Opcional: Cambiar el tamaño de la fuente para pantallas pequeñas */
+    .dropdown-content li a {
+        font-size: 14px;
     }
 }
 
 /* Para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
+    /* Estilo adicional para pantallas más pequeñas */
     .dropdown-content li a {
-        font-size: 12px; /* Reducir el tamaño del texto */
-        padding: 8px; /* Ajustar el espaciado */
+        font-size: 12px; /* Hacer el texto más pequeño */
+        padding: 8px; /* Agregar un poco de padding para facilitar el clic */
     }
 }
+
 
 /* Capa adicional para asegurar que el menú esté por encima de todo */
 
@@ -180,7 +170,7 @@ body, html {
     left: 10px; /* Ajusta la posición desde la izquierda */
     z-index: 2; /* Asegura que los íconos estén encima del contenido */
 }
-    
+
 /* Estilo para los íconos de redes sociales */
 .social-icons a {
     color: white;
@@ -214,35 +204,40 @@ body, html {
     .hamburger {
         display: block; /* Muestra la hamburguesa en pantallas pequeñas */
     }
-/* Menú */
-    /* Menú */
+
     .nav-menu {
-        display: none; /* Ocultar por defecto */
-        flex-direction: column;
-        align-items: center;
+        display: none; /* Oculta el menú en pantallas pequeñas */
+        flex-direction: column; /* Cambia la dirección de los elementos del menú */
+        align-items: center; /* Centra los elementos del menú */
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo para el menú desplegable */
         position: absolute;
-        top: 60px;
+        top: 60px; /* Ajusta la posición del menú desplegable */
         left: 0;
-        z-index: 1;
+        z-index: 1; /* Asegura que el menú esté encima del contenido */
     }
 
     .nav-menu.show {
-        display: flex; /* Mostrar el menú cuando está activo */
+        display: flex; /* Muestra el menú cuando la hamburguesa está activada */
     }
 
-    .nav-menu li {
-        margin: 10px 0;
-    }
+   
+}
 
-  
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar {
+        min-height: 200px; /* Ajusta la altura */
+        background-size: cover; /* Asegura que la imagen se escale bien */
+        background-position: center;
+    }
 }
 
 @media (max-width: 480px) {
-    .nav-menu li a {
-        font-size: 12px;
-        padding: 8px;
+    .navbar {
+        min-height: 150px; /* Ajusta la altura para pantallas muy pequeñas */
+        background-size: cover;
+        background-position: center;
     }
 }
 
@@ -289,20 +284,6 @@ body, html {
 .ventaja:hover {
     transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
 }
-
-/* Estilo para los enlaces dentro de .ventaja */
-.ventaja a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Hereda el color del contenedor padre */
-    display: block; /* Asegura que todo el ícono y texto sean clicables */
-}
-
-/* Aplica transiciones y efectos normales */
-.ventaja a:hover {
-    color: inherit; /* Asegura que no cambie el color al pasar el cursor */
-    text-decoration: none; /* Mantiene sin subrayado al pasar el cursor */
-}
-
 
 
 /* Sección "nosotros" con imagen de fondo que ocupa el 95% de su espacio y centrada */
