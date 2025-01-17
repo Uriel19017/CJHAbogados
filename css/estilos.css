@@ -261,7 +261,7 @@ body {
     text-align: center;
     font-family: Arial, sans-serif; /* Fuente específica */
     transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
-    cursor: default; /* Cambia el cursor para que no parezca clicable */
+    cursor: pointer; /* Cambia el cursor para parecer clicable */
 }
 
 .ventaja i {
@@ -286,11 +286,11 @@ body {
     transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
 }
 
-/* Ajuste para eliminar apariencia de enlace */
+/* Ajuste para la apariencia de enlace */
 .ventaja a {
     text-decoration: none; /* Elimina el subrayado del enlace */
     color: inherit; /* Hereda el color del contenedor padre */
-    pointer-events: none; /* Desactiva la interacción del enlace */
+    pointer-events: auto; /* Activa la interacción del enlace */
 }
 
 
